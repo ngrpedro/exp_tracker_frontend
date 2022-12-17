@@ -1,6 +1,7 @@
 import { ArcElement, Chart } from "chart.js";
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
+import GraphDetails from "./GraphDetails";
 
 Chart.register(ArcElement);
 
@@ -29,11 +30,16 @@ const config = {
 
 const Graph = () => {
   return (
-    <div className="relative">
-      <Doughnut {...config}></Doughnut>
-      <div className="absolute top-[43%] left-[43%]">
-        <h1 className="font-semibold">Total</h1>
-        <span className="font-semibold text-cyan-900">R$ 999</span>
+    <div className="">
+      <div className="relative">
+        <Doughnut {...config}></Doughnut>
+        <div className="absolute top-[43%] left-[43%]">
+          <h1 className="font-semibold">Total</h1>
+          <span className="font-semibold text-cyan-900">R$ 999</span>
+        </div>
+      </div>
+      <div className="mt-10">
+        <GraphDetails />
       </div>
     </div>
   );
