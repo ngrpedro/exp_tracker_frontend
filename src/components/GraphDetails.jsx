@@ -32,7 +32,8 @@ const Item = ({ data }) => {
 
   return (
     <div
-      className={`flex items-center justify-between border-l-8 border-l-[${color}] rounded-md pl-2 mt-6`}
+      className={`flex items-center justify-between rounded-md pl-2 mt-6`}
+      style={{ borderLeft: `10px solid ${color}` }}
     >
       <h1>{type ?? " "}</h1>
       <span>{percent ?? 0}%</span>
