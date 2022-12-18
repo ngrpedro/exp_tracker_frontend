@@ -1,0 +1,59 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Pedro Soares Nogueira",
+            "email": "pedro@gmail.com",
+            "password": "pedro"
+        },
+        {
+            "id": 2,
+            "name": "Paula Santos",
+            "email": "paula@gmail.com",
+            "password": "paula"
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "type": "Investiment",
+            "color": "#36a2eb"
+        },
+        {
+            "id": 2,
+            "type": "Saving",
+            "color": "#ff6384"
+        },
+        {
+            "id": 3,
+            "type": "Expense",
+            "color": "#ffcd56"
+        }
+    ],
+    "transactions": [
+        {
+            "name": "Salary",
+            "amount": "5000",
+            "userId": 1,
+            "categoryId": 1
+        },
+        {
+            "name": "Salary",
+            "amount": "4000",
+            "userId": 2,
+            "categoryId": 1
+        },
+        {
+            "name": "Pay rent",
+            "amount": "650",
+            "userId": 1,
+            "categoryId": 3
+        },
+        {
+            "name": "Pay eletr.",
+            "amount": "200",
+            "userId": 1,
+            "categoryId": 3
+        }
+    ]
+}
