@@ -33,9 +33,9 @@ const Graph = () => {
     <div className="">
       <div className="relative">
         <Doughnut {...config}></Doughnut>
-        <div className="absolute top-[43%] left-[43%]">
-          <h1 className="font-semibold">Total</h1>
-          <span className="font-semibold text-cyan-900">R$ 999</span>
+        <div className="absolute top-[40%] left-[40%]">
+          <h1 className="font-semibold text-2xl">Total</h1>
+          <span className="font-semibold text-cyan-900 text-2xl">R$ 999</span>
         </div>
       </div>
       <div className="mt-10">
