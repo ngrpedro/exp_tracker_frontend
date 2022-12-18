@@ -1,5 +1,8 @@
+import { Route, Routes } from "react-router-dom";
 import Form from "./components/Form";
 import Graph from "./components/Graph";
+import Login from "./pages/Login";
+import Wallet from "./pages/Wallet";
 
 function App() {
   return (
@@ -9,10 +12,11 @@ function App() {
           <h1>Expense Tracker</h1>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          <Graph />
-          <Form />
-        </div>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/logout" element={<Login />} />
+          <Route path="/wallet/:id" element={<Wallet />} />
+        </Routes>
       </div>
     </div>
   );
