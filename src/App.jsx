@@ -10,9 +10,7 @@ function App() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          {/* Chart */}
           <Graph />
-          {/* Form */}
           <Form />
         </div>
       </div>
