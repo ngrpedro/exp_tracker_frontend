@@ -6,7 +6,7 @@ const Form = () => {
   const { register, handleSubmit, resetField } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    //console.log(data);
   };
 
   return (

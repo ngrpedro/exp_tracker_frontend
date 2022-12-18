@@ -28,7 +28,6 @@ const GraphDetails = () => {
 
 const Item = ({ data }) => {
   const { color, type, percent } = data;
-  console.log(color);
 
   return (
     <div
