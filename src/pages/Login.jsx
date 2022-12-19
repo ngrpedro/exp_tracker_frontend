@@ -1,14 +1,21 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
   const { register, handleSubmit, resetField } = useForm();
+  const [user, setUser] = useState([]);
 
-  const onSubmit = (data) => {
-    console.log(data);
-    navigate("/wallet/1");
+  const onSubmit = async (data) => {
+    await axios
+      .get(`http://localhost:3000/users?email=${data.email}`)
+      .then((res) => {
+        setUser(res.data);
+        navigate(`/wallet/${res.data[0].id}`);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
