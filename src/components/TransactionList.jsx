@@ -1,23 +1,26 @@
-const obj = [
-  {
-    type: "Saving",
-    color: "#ff6384",
-  },
-  {
-    type: "Investiment",
-    color: "#36a2eb",
-  },
-  {
-    type: "Expense",
-    color: "#ffcd56",
-  },
-];
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const TransactionList = () => {
+  const { id } = useParams();
+
+  const [transactions, setTransactions] = useState();
+
+  useEffect(() => {
+    const getUserWallet = async () => {
+      await axios
+        .get(`http://localhost:3000/transactions?userId=${id}`)
+        .then((res) => setTransactions(res.data))
+        .catch((err) => console.log(err));
+    };
+    getUserWallet();
+  }, []);
+
   return (
     <div className="pt-10 border-t-2 border-gray-200 space-y-4">
       <h1 className="font-semibold text-xl">History</h1>
-      {obj.map((item, index) => (
+      {transactions?.map((item, index) => (
         <Item key={index} data={item} />
       ))}
     </div>
@@ -26,12 +29,12 @@ const TransactionList = () => {
 
 const Item = ({ data }) => {
   if (!data) return null;
-  const { type, color } = data;
+  const { name, amount } = data;
+
   return (
-    <div
-      className="flex items-center gap-12 rounded-md shadow-md py-3 px-4 cursor-pointer hover:shadow-xl transition-all"
-      style={{ borderRight: `10px solid ${color}` }}
-    >
+    <div className="flex items-center justify-between gap-12 rounded-md shadow-md py-3 px-4 cursor-pointer hover:shadow-xl transition-all">
+      <div className="font-bold">R$ {amount}</div>
+      <h1>{name}</h1>
       <div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -48,8 +51,6 @@ const Item = ({ data }) => {
           />
         </svg>
       </div>
-
-      <h1>{type}</h1>
     </div>
   );
 };
